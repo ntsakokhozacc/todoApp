@@ -16,10 +16,7 @@ export class TodosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.todos = [
-      {content:'first Todo',completed:false},
-      {content:'Second Todo',completed:true }
-    ]
+    this.todos = []
 
 
   }
@@ -36,7 +33,13 @@ export class TodosComponent implements OnInit {
   }
 
   addTodo(){
-    this.todos.push({content:this.inputTodo, completed:false});
-    this.inputTodo = "";
+    if (this.inputTodo==""){
+        return null;
+    }else{
+      this.todos.push({content:this.inputTodo, completed:false});
+      this.inputTodo = "";
+    }
+
+    
   }
 }
