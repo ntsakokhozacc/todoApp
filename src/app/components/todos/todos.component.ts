@@ -42,4 +42,8 @@ export class TodosComponent implements OnInit {
 
     
   }
+
+  clearAll(){
+    this.todos =[]
+  }
 }
