@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { TodosComponent } from './components/todos/todos.component';
 
 @NgModule({
   //declarations are for declaring components
   declarations: [
-    AppComponent
+    AppComponent,
+    TodosComponent
   ],
   //imports are for importing modules
   imports: [
