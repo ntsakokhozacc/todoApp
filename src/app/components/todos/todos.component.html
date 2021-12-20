@@ -20,9 +20,18 @@
         </form>
         
         <div *ngFor="let todo of todos; let i = index" class="todo {{ (todo.completed ? 'done':'') }}">
-            <div class="id">{{i+1}}</div>
+            <div class="id" (click)="(editTodo(i))">{{i+1}}</div>
+            
             <div class="content" (click)="toggleDone(i)">{{todo.content}}</div>
             <button class="delete" (click)="deleteTodo(i)">Remove</button>
+            <!-- <ng-template [ngIf]="editTodo(i)" hidden={{conditonal}}>
+                <input type="text" 
+            name = "inputUpdate"
+            value={{todo.content}} 
+            placeholder={{todo.content}} 
+            [(ngModel)]="inputTodo"
+            class="todo-input"/>
+            </ng-template> -->
         </div>
     </div>
 

@@ -11,6 +11,7 @@ export class TodosComponent implements OnInit {
   
   todos:Todo[]
   inputTodo:string = "";
+  conditonal:boolean = true;
 
   constructor() { }
 
@@ -44,6 +45,19 @@ export class TodosComponent implements OnInit {
   }
 
   clearAll(){
-    this.todos =[]
+    this.todos =[];
   }
+
+  editTodo(id:number){
+    
+    this.todos.map((v, i) => {
+      if (i==id) this.conditonal = !this.conditonal;
+      return this.conditonal;
+    })
+    
+
+
+    return this.conditonal;
+  }
+
 }
